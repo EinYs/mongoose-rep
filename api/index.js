@@ -1,4 +1,3 @@
-require('dotenv').config()
 const { Nuxt, Builder } = require('nuxt')
 const express = require('express')
 
@@ -10,7 +9,9 @@ const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);// fix for -> collection.ensureIndex is deprecated. Use createIndexes instead.
 mongoose.set('useMongoClient', true);// 
 mongoose.set('useFindAndModify', true);// 
-var uri = process.env.DBURI; // 테스트 heroku 에서는 test DB URI !
+
+var uri = "mongodb+srv:// PLEASE PUT YOUR URI "; // Change This
+
 mongoose.connect(uri, { useNewUrlParser: true},  function (err, res) {
     console.log(err || 'MongoDB connected');
 });
